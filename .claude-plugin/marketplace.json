@@ -1,0 +1,14 @@
+{
+  "name": "team-git-skills",
+  "description": "GitHub team workflow skills for Claude Code, built for class project teams new to git.",
+  "owner": {
+    "name": "kmedi355"
+  },
+  "plugins": [
+    {
+      "name": "team-git",
+      "source": "./",
+      "description": "Beginner-friendly GitHub team workflow skills for Claude Code."
+    }
+  ]
+}

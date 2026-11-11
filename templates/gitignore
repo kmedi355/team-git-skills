@@ -1,0 +1,23 @@
+# Secrets and local config (never commit these)
+.env
+.env.local
+.env.*
+!.env.example
+*.key
+*.pem
+secrets/
+
+# Dependencies and build output
+node_modules/
+dist/
+build/
+.next/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# macOS and editor files
+.DS_Store
+.vscode/settings.json
+.idea/

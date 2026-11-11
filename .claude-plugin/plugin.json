@@ -1,0 +1,11 @@
+{
+  "name": "team-git",
+  "version": "1.0.0",
+  "description": "Beginner-friendly GitHub team workflow for Claude Code: set up, branch, commit and push safely, open and review PRs, propose edits to teammates' work, resolve conflicts, and undo mistakes. Works in any repo.",
+  "author": {
+    "name": "kmedi355"
+  },
+  "repository": "https://github.com/kmedi355/team-git-skills",
+  "license": "MIT",
+  "keywords": ["git", "github", "teams", "students", "workflow"]
+}
