@@ -42,9 +42,18 @@ Guide: if the repo has a CONTRIBUTING.md, the matching section is "I want my cha
 
 6. Check it can merge cleanly with `gh pr view --json mergeable,reviewDecision`. If it conflicts, run `update-branch` first.
 
-7. Merge with the preferred allowed method, then clean up:
+7. Merge with the preferred allowed method, then update the local copy:
    ```bash
-   gh pr merge --squash --delete-branch    # or --merge if squash isn't allowed
+   gh pr merge <number> --squash    # or --merge if squash isn't allowed
    git checkout <base>
    git pull
    ```
+
+8. **Branch cleanup: don't assume.** Check the repo setting:
+   ```bash
+   gh repo view --json deleteBranchOnMerge -q .deleteBranchOnMerge
+   ```
+   - **`true`:** GitHub deletes the PR's branch on GitHub by itself, usually within a few seconds of the merge, so a check right after merging can still see it. Tell the user GitHub removes it automatically; don't offer to delete it.
+   - **`false`:** check whether it's still there with `git ls-remote --exit-code --heads origin <head-branch>` (exit code 2 means it's gone). If it's the user's own branch, delete it with `git push origin --delete <head-branch>`. If it's a teammate's, ask first.
+
+   Either way, if the user has a local copy of the branch and it's their own, remove it with `git branch -d <head-branch>`.

@@ -1,6 +1,6 @@
 {
   "name": "team-git",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Beginner-friendly GitHub team workflow for Claude Code: set up, branch, commit and push safely, open and review PRs, propose edits to teammates' work, resolve conflicts, and undo mistakes. Works in any repo.",
   "author": {
     "name": "kmedi355"
